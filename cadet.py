@@ -4,8 +4,8 @@ import requests
 from playwright.async_api import async_playwright
 
 # --- CONFIGURATION ---
-TELEGRAM_TOKEN = "8638830876:AAFruklFCF0Ghy5zsa1Ih6ncLuyLmglm0tA"
-CHAT_ID = "8203814996" 
+TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+CHAT_ID = os.getenv("CHAT_ID") 
 
 URL_LIST = [
     "https://careers.qatarairways.com/global/SearchJobs/pilot?listFilterMode=1&jobRecordsPerPage=10&",

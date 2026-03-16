@@ -9,8 +9,7 @@ TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
 CHAT_ID = os.getenv("CHAT_ID") 
 
 URL_LIST = [
-    "https://careers.qatarairways.com/global/SearchJobs/pilot?listFilterMode=1&jobRecordsPerPage=10&",
-    "https://careers.qatarairways.com/global/SearchJobs/?listFilterMode=1&jobRecordsPerPage=10&"
+    "https://careers.qatarairways.com/global/SearchJobs/cadet?listFilterMode=1&jobRecordsPerPage=10&"
 ]
 
 def send_telegram(message):

@@ -1,0 +1,31 @@
+name: Qatar Airways Job Check
+
+on:
+  schedule:
+    # This runs at 09:00 UTC (12:00 PM Qatar Time) every day
+    - cron: '0 9 * * *'
+  workflow_dispatch: # This adds a "Run now" button for testing
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          python -m playwright install chromium --with-deps
+
+      - name: Run script
+        env:
+          # This pulls your secrets into the script
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python cadet.py

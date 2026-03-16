@@ -1,6 +1,7 @@
 import asyncio
 import re
 import requests
+import os
 from playwright.async_api import async_playwright
 
 # --- CONFIGURATION ---

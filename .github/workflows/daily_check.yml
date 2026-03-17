@@ -2,7 +2,7 @@ name: Qatar Airways Job Check
 
 on:
   schedule:
-  - cron: "*/10 0 * * *"
+    - cron: "0 9 * * *" 
   workflow_dispatch: # This adds a "Run now" button for testing
 
 jobs:
